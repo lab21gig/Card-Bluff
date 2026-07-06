@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!--
+    Dynamic base href: makes the app work whether it's served from a domain
+    root (https://you.github.io/) OR a GitHub Pages project subpath
+    (https://you.github.io/card-bluff/) with NO editing or rebuilding. It
+    sets <base> to the folder the page is served from, so all of Flutter's
+    assets, the manifest, and the service worker resolve correctly.
+  -->
+  <script>
+    (function () {
+      var p = location.pathname;
+      if (!p.endsWith('/')) p = p.substring(0, p.lastIndexOf('/') + 1);
+      document.write('<base href="' + p + '">');
+    })();
+  </script>
+
+  <meta charset="UTF-8">
+  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="description" content="Card Bluff — bluff your friends, catch their lies, and be the first to empty your hand.">
+  <meta name="theme-color" content="#0B0E14">
+
+  <!-- iOS: installable from Safari's Share -> Add to Home Screen -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Card Bluff">
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+
+  <link rel="icon" type="image/png" href="favicon.png"/>
+
+  <title>Card Bluff</title>
+  <link rel="manifest" href="manifest.json">
+
+  <style>
+    /* Black backdrop so there's no white flash before Flutter paints,
+       matching the app's black intro. */
+    html, body { margin: 0; padding: 0; height: 100%; background: #000; }
+  </style>
+</head>
+<body>
+  <script src="flutter_bootstrap.js" async></script>
+</body>
+</html>
